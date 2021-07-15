@@ -1,0 +1,114 @@
+@charset 'UTF-8'; 
+
+@import 'variables';
+@import 'function';
+@import 'mixins';
+@import 'fonts'; 
+
+
+html{
+	font-size: 55%;
+
+	@include breakpoint($tablet){
+		font-size: 62.5%;
+	}
+}
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4{  
+	font-weight: 700;
+}
+
+
+body{   
+	font-size: $base-font-size;	 
+	font-family: $base-font;
+}
+
+p{
+	font-size: $base-font-size;	
+	line-height: $base-font-size + 0.4 ;
+	margin-bottom: 0;
+}
+
+button{
+	font-family: $base-font;
+	border: 0;
+	outline: 0;
+
+	&.btn{
+		padding: 0.9rem 1.6rem;
+		background-color: $blue;
+		color: $white;
+		text-transform: uppercase;
+		font-size: 1.2rem;
+		letter-spacing: 0.01rem;
+		font-weight: 600;
+		border-radius: 0.3rem; 
+		cursor: pointer;
+
+		&:hover{
+			background-color: darken($blue, 10%);
+		}
+	}
+}
+
+
+.container-fluid{
+	@include calc("width", "100% - 3rem");
+	padding: 0 1.5rem;
+
+	.container{
+		max-width: 114rem;
+		margin: auto;
+	}
+}
+
+.page{
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.notification{
+	padding: 2rem;
+	font-size: $base-font-size - 0.2;	
+	border: 1px dashed;
+	background: inherit;
+	color: inherit;
+    text-align: center; 
+
+	@include breakpoint($tablet){
+		padding: 3rem;
+	}
+
+	&.notification-info{ 
+		background-color: $lighter-gray;
+		border-color: darken($lighter-gray, 5%);
+	}
+
+	&.notification-warn{ 
+		background-color: lighten($warn-red, 45%);
+		border-color: $warn-red;
+		color: $warn-red;
+	}
+
+	p{
+		font-size: inherit;
+	}
+}
+
+.grid{ 
+	display: flex;
+	flex-direction: column;
+
+	@include breakpoint($tablet){  
+		flex-direction: row;
+	};
+}
+ 
+ 
+

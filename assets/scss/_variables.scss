@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+ 
+/// Main brand colours
+$base-color: #3b3e3f;
+$light-gray-year: #c3c3c3;
+$light-gray: #ecedee;
+$lighter-gray: #f2f5f7;
+$warn-red: #e41b4d;
+$white: #ffffff;
+$blue: #307cfb;
+
+///font sizes
+$base-font-size: 1.6rem;
+$logo-font-size: 3rem;
+ 
+/// Breakpoints
+
+$small-device: 320px; 
+$medium-device: 480px; 
+$tablet: 768px;
+$tablet-medium: 992px;
+$x-small-desktop: 1024px;
+$small-desktop: 1280px;
+$medium-desktop: 1440px;
+$large-desktop: 1600px; 
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '../' !default;
+
