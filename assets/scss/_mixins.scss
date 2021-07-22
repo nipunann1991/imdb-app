@@ -2,7 +2,7 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 
-
+@use 'sass:math';
 @mixin parent($context) {
   #{$context} & {
     @content;
@@ -45,50 +45,35 @@
         @content;
     }
 }
+ 
+@mixin flex() {
+    display: -webkit-flex;
+    display: flex; 
+} 
 
 @mixin flex-column() {
-    display: -webkit-flex;
-    display: flex;
+   @include flex();
     -webkit-flex-direction: column;
     flex-direction: column;
 }
-
-@mixin flex() {
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-} 
  
-@mixin background-opacity($color, $opacity: 1) {
-    background: $color; /* The Fallback */
-    background: rgba($color, $opacity);
-}
-
 @mixin calc($key, $value) {
     #{$key}: -webkit-calc(#{$value});
     #{$key}: -moz-calc(#{$value});
     #{$key}: calc(#{$value});
 }
 
-
 @mixin cols($val) {
   flex: 0 0 auto;
-  width: 100%;
   flex-direction: row;
   padding: 0 1.5rem; 
   @include calc("width", "100% - 3rem");
-  
-  @include breakpoint($tablet){ 
-      @include calc("width", (100 /12) * $val + "% - 3rem");
-      flex-direction: column;
+ 
+  @include breakpoint($tablet){    
+    @include calc("width", math.div(100, 12) * $val + "% - 3rem");
   };
-}
-
-@mixin bg-image($image, $bg-position : 50% 50% ){
-  background-image: url('/assets/images/'+$image);
-  background-repeat: no-repeat;
-  background-position: $bg-position;
-}
+  
+} 
 
 @mixin box-shadow($top, $right, $bottom, $left, $color, $inset: false) {
     @if $inset {

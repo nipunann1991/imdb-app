@@ -12,12 +12,13 @@ $warn-red: #e41b4d;
 $white: #ffffff;
 $blue: #307cfb;
 
+
 ///font sizes
-$base-font-size: 1.6rem;
+$base-font-size: 1.5rem;
 $logo-font-size: 3rem;
  
-/// Breakpoints
 
+/// Breakpoints
 $small-device: 320px; 
 $medium-device: 480px; 
 $tablet: 768px;
@@ -28,8 +29,5 @@ $medium-desktop: 1440px;
 $large-desktop: 1600px; 
 
 /// Relative or absolute URL where all assets are served from
-/// @type String
-/// @example scss - When using a CDN
-///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '../' !default;
 

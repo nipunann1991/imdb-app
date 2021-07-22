@@ -1,7 +1,6 @@
 @charset 'UTF-8'; 
 
-@import 'variables';
-@import 'function';
+@import 'variables'; 
 @import 'mixins';
 @import 'fonts'; 
 
@@ -20,13 +19,13 @@ html{
 }
 
 h1, h2, h3, h4{  
-	font-weight: 700;
+	@include semibold-font;
 }
 
 
 body{   
 	font-size: $base-font-size;	 
-	font-family: $base-font;
+	@include normal-font;
 }
 
 p{
@@ -36,18 +35,18 @@ p{
 }
 
 button{
-	font-family: $base-font;
+	@include normal-font;
 	border: 0;
 	outline: 0;
 
 	&.btn{
+		@include semibold-font; 
 		padding: 0.9rem 1.6rem;
 		background-color: $blue;
 		color: $white;
 		text-transform: uppercase;
-		font-size: 1.2rem;
-		letter-spacing: 0.01rem;
-		font-weight: 600;
+		font-size: $base-font-size - 0.3;
+		letter-spacing: 0.01rem; 
 		border-radius: 0.3rem; 
 		cursor: pointer;
 
@@ -73,42 +72,6 @@ button{
 	padding-bottom: 3rem;
 }
 
-.notification{
-	padding: 2rem;
-	font-size: $base-font-size - 0.2;	
-	border: 1px dashed;
-	background: inherit;
-	color: inherit;
-    text-align: center; 
-
-	@include breakpoint($tablet){
-		padding: 3rem;
-	}
-
-	&.notification-info{ 
-		background-color: $lighter-gray;
-		border-color: darken($lighter-gray, 5%);
-	}
-
-	&.notification-warn{ 
-		background-color: lighten($warn-red, 45%);
-		border-color: $warn-red;
-		color: $warn-red;
-	}
-
-	p{
-		font-size: inherit;
-	}
-}
-
-.grid{ 
-	display: flex;
-	flex-direction: column;
-
-	@include breakpoint($tablet){  
-		flex-direction: row;
-	};
-}
  
  
 
